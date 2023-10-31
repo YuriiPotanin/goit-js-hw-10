@@ -37,7 +37,9 @@ selector.addEventListener('change', onSelect);
 function onSelect(evt) {
   const selectBreedId = evt.currentTarget.value;
   catInformation.classList.add('is-hidden');
-
+  //  ------------------------
+  load.classList.remove('is-hidden');
+// ---------------------------
   fetchCatByBreed(selectBreedId)
     .then(data => {
       markup(data);
