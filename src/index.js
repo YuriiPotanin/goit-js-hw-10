@@ -8,6 +8,7 @@ const selector = document.querySelector('.breed-select');
 const load = document.querySelector('.loader');
 const error = document.querySelector('.error');
 const catInformation = document.querySelector('.cat-info');
+const selectorBox = document.querySelector('.selector-box');
 
 error.classList.add('is-hidden');
 
@@ -39,12 +40,13 @@ function onSelect(evt) {
   catInformation.classList.add('is-hidden');
   //  ------------------------
   load.classList.remove('is-hidden');
+  selectorBox.classList.add('is-hidden');
 // ---------------------------
   fetchCatByBreed(selectBreedId)
     .then(data => {
       markup(data);
       catInformation.classList.remove('is-hidden');
-    })
+   })
     .catch(() => {
       Notiflix.Notify.failure(
         `Oops! Something went wrong! Try reloading the page!`,
@@ -53,6 +55,7 @@ function onSelect(evt) {
     })
     .finally(() => {
       load.classList.add('is-hidden');
+      selectorBox.classList.remove('is-hidden');
     });
 }
 function markup(data) {
