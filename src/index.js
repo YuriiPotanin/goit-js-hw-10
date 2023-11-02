@@ -40,7 +40,7 @@ function onSelect(evt) {
   catInformation.classList.add('is-hidden');
   //  ------------------------
   load.classList.remove('is-hidden');
-  selectorBox.classList.add('is-hidden');
+  // selectorBox.classList.add('is-hidden');
 // ---------------------------
   fetchCatByBreed(selectBreedId)
     .then(data => {
